@@ -1,7 +1,230 @@
-<p>Hello </p>
-<p>here is NDDOMI website</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NDD-OMI</title>
+    <link rel="icon" href="static/img/logo.png" type="image/icon type">
+    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="static/css/nav.css">
+</head>
 
-<ul>
-  <li> <a href="#">Zhihu</a> </li>
-  <li> <a href="#">Blog</a> </li>
-</ul>
+<body>
+
+<div id="nav">
+    <div id="icon">
+        <img src="static/img/logo.png" id="nav-icon">
+        <a class="nav-button" href="index.html"
+           style="margin-left: 2px; font-size: 24px">NDD-OMI
+        </a>
+    </div>
+    <div>
+        <a class="nav-button" href="index.html">Home</a>
+        <a class="nav-button" href="leaderboard.html">Leaderboard</a>
+        <a class="nav-button" href="explore.html">Explore</a>
+        <a class="nav-button" href="about.html">About</a>
+        <!--            <a class="nav-button" href="static/visualize.html">Visualize</a>-->
+        <a class="nav-button" href="contact.html">Contact</a>
+    </div>
+</div>
+
+
+<!-- anchor for the home button -->
+<div id="home" style="position: absolute; top: 0;"></div>
+
+<!-- banner -->
+<div id="title">
+    <div id="title-wrapper">
+        <img src="static/img/logo.png" id="title-icon">
+        <p id="title-text">NDD-OMI</p>
+    </div>
+    <p id="subtitle-text">
+        The resource of outcome measurement instruments <br>
+        in neurodegenerative disease research
+        <br><br>
+        (2023)
+    </p>
+    <p id="title-padding-bottom">&nbsp;</p>
+</div>
+
+<!-- the main body of the page -->
+<!-- each section uses an empty div as an anchor -->
+<div id="body">
+    <div class="section">
+        <h1>About NDD-OMI</h1>
+        <br>
+        <p style="line-height: 150%">
+          Neurodegenerative diseases (NDDs) affect a substantial and growing proportion of the 
+          aging population worldwide. Despite the increasing number of clinical trials aimed 
+          at exploring novel interventions for NDD, there is a substantial heterogeneity in 
+          the selection of appropriate instruments for outcome measurement. This study aimed 
+          to comprehensively investigate the outcome measurement instruments employed in 
+          clinical trials of NDD in past two decades, focusing primarily on utilization 
+          patterns and prevalence trends.
+        </p>
+        <div class="example-box">
+            <figure id="example-img">
+                <img src="static/img/overview.png" alt="overview.png">
+            </figure>
+        </div>
+    </div>
+
+    <div class="section">
+        <div id="data" class="anchor"></div>
+        <h1>Data</h1>
+        <p>
+          A total of 4619 trials of 6 common NDDs posted from Jan 2001 to Dec 2022 were 
+          included for analysis, and 2494 unique instruments were identified.
+        </p>
+        <ul>
+          <li>Alzheimer Disease(1647)</li>
+          <li>Parkinson Disease(1132)</li>
+          <li>Amyotrophic Lateral Sclerosis(223)</li>
+          <li>Huntington Disease(166)</li>
+          <li>Lewy Body Disease(181)</li>
+          <li>Frontotemporal Lobar Degeneration(185)</li>
+        </ul>
+    </div>
+
+    <!-- <hr> -->
+    <!-- <div class="section">
+        <div id="dataset" class="anchor"></div>
+        <h1>C-Eval Dataset</h1>
+        <p>
+            Our C-Eval benchmark provides testing in a multi-level and multi-disciplinary
+            manner. It consists of <b>13,637 multiple-choice questions </b>across<b> 51 subjects</b>,
+            ranging in difficulty from junior high school to undergraduate and vocational
+            qualifications, covering knowledge areas in the humanities, social sciences,
+            STEM, and other fields. <i>(see the figure below)</i>.
+        </p>
+        <div class="example-box">
+            <figure id="example-img">
+                <img src="static/img/overview.png" alt="overview.png">
+                <figcaption class="caption"> fig 1. Overview of our Dataset
+                </figcaption>
+            </figure>
+        </div>
+        <p>
+            Moreover, the C-Eval benchmark
+            test has relatively low data leakage, as it uses simulated exams and previous
+            exams with non-plain text data formats, ensuring that memorization or easy
+            access to large amounts of data on the internet is difficult during the pre-training stage.
+        </p>
+        <p>
+            By using output options instead of a complete answer, we can more easily standardize
+            the output format and accurately evaluate the accuracy of the response. Certain subjects,
+            such as mathematics and chemistry, involve problems that span multiple levels of learning,
+            which is consistent with the way humans process cognition. Therefore, it is possible to
+            analyze the model performance of a given subject at different levels of difficulty and
+            observe the cognitive processes adopted by the model.
+        </p>
+        <p>
+            For more details, you can explore the datatset and leaderboard here:
+            <a class="ext-link" href="static/explore.html">Explore</a> and
+            <a class="ext-link" href="static/leaderboard.html">Leaderboard</a>.
+        </p>
+        <p>
+            Our dataset is distributed under the XXX
+            license. You can download our dataset from
+            <a href="" class="ext-link">
+                XXX
+            </a>
+            (Google Drive), or check out our
+            <a href="https://github.com/SJTU-LIT/ceval" class="ext-link" target="blank">github
+                repository</a>.
+        </p>
+    </div> -->
+
+    <!-- <hr> -->
+    <!-- <div class="section">
+        <div id="paper" class="anchor"></div>
+        <h1>Paper</h1>
+        <p>
+            <papername>C-EVAL: A Multi-Level Multi-Discipline Chinese Evaluation Suite for Foundation Models</papername>
+            <br>
+            Yuzhen Huang<sup>*</sup><sup>1</sup>, Yuzhuo Bai<sup>*</sup><sup>2</sup>, Zhihao Zhu<sup>1</sup>, Junlei
+            Zhang<sup>1</sup>, Jinghan Zhang<sup>1</sup>, Tangjun Su<sup>1</sup>, Junteng Liu<sup>1</sup>, Chuancheng Lv<sup>2</sup>,
+            Yikai Zhang<sup>1</sup>, Jiayi Lei<sup>1</sup>, Fanchao Qi<sup>2</sup>, Yao Fu<sup>3</sup>, Maosong Sun<sup>2</sup>,
+            Junxian He<sup>†</sup><sup>1</sup><br>
+            <small><sup>1</sup>Shanghai Jiao Tong University <sup>2</sup>Tsinghua University <sup>3</sup>University of
+                Edinburgh<br>
+                <sup>*</sup>Equal Contribution &nbsp; <sup>†</sup>Corresponding author</small><br><br>
+            <a href="XXX" class="ext-link" target="_blank">arxiv</a> -->
+    <!-- <a href="XXX" class="ext-link" target="_blank">PDF</a> -->
+    <!-- </p> -->
+    <!-- <p>
+        <a href="static/img/paper_thumbnail.png" class="ext-link" target="blank">
+            <img src="static/img/paper_thumbnail.png" style="width: 100%;">
+        </a>
+    </p> -->
+    <!--    </div>-->
+
+    <!-- <hr> -->
+    <!-- <div class="section">
+        <div id="code" class="anchor"></div>
+        <h1>Code</h1>
+        <p>
+            View on the <a href="https://github.com/SJTU-LIT/ceval" class="ext-link" target="blank">github
+            repository</a>.
+        </p>
+    </div> -->
+
+    <!-- <hr> -->
+    <!-- <div class="section">
+        <div id="citation" class="anchor"></div>
+        <h1>Citation</h1>
+        <p>
+            If the paper, codes, or the dataset inspires you, please cite us:
+        </p> -->
+        <!-- <pre class="bibtax">
+@inproceedings{huang2023ceval,
+title={C-Eval: A Multi-Level Multi-Discipline Chinese Evaluation Suite for Foundation Models},
+author={Huang, Yuzhen and Bai, Yuzhuo and Zhu, Zhihao and Zhang, Junlei and Zhang, Jinghan and Su, Tangjun and Liu, Junteng and Lv, Chuancheng and Zhang, Yikai and Lei, Jiayi and Fu, Yao and Sun, Maosong and He, Junxian},
+booktitle={Advances in Neural Information Processing Systems},
+year={2023}
+}
+        </pre>
+        <br>
+    </div> --> 
+
+    <!-- Authors -->
+
+    <!-- Contact -->
+    <div class="section" id="contact">
+        <h1>Contact Us</h1>
+        <p>Address: Institutes for Systems Genetics, D5-A10, Frontiers Science Center 
+          for Disease-related Molecular Network, No.2222 Xinchuan Road, Chengdu, Sichuan, China</p>
+        <p>E-mail: zonghui0228@163.com</p>
+        <p>Web: http://www.sysbio.org.cn</p>
+
+    </div>
+
+    <!-- Affiliation  -->
+    <div class="section" style="text-align: center;">
+        <div class="container">
+            <div class="profile">
+            <a href="https://www.wchscu.cn/scientific/science_technology/platform/60269.html" target="_blank" rel="external">
+                <img class="center-block" src="static/img/hxlogo.png"
+                     style="height:6em; max-width: 100%;"></a>
+        </div>
+        <!-- <div class="profile">
+            <a href="https://www.tsinghua.edu.cn/" target="_blank" rel="external">
+                <img class="center-block" src="static/img/THU_purple.png"
+                     style="height:6em; max-width: 100%;"></a>
+        </div>
+        <div class="profile">
+            <a href="https://hkust.edu.hk/" target="_blank" rel="external">
+                <img class="center-block" src="static/img/UST.png"
+                     style="height:6em; max-width: 100%;"></a>
+        </div> -->
+        </div>
+    </div>
+</div>
+<!-- footer -->
+<div id="footer" style="font-size: 12pt; text-align: center">
+  All rights reserved: Institutes for Systems Genetics, West China Hospital, Sichuan University
+</div>
+</body>
+
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NDD-OMI</title>
+    <link rel="icon" href="static/img/logo.png" type="image/icon type">
+    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="static/css/nav.css">
+    <script type="text/javascript" src="javascript/sort-table.js"></script>
+</head>
+
+<body>
+
+<div id="nav">
+    <div id="icon">
+        <img src="static/img/logo.png" id="nav-icon">
+        <a class="nav-button" href="index.html"
+           style="margin-left: 2px; font-size: 24px">NDD-OMI
+        </a>
+    </div>
+    <div>
+        <a class="nav-button" href="index.html">Home</a>
+        <a class="nav-button" href="leaderboard.html">Leaderboard</a>
+        <a class="nav-button" href="explore.html">Explore</a>
+        <a class="nav-button" href="about.html">About</a>
+        <a class="nav-button" href="contact.html">Contact</a>
+    </div>
+</div>
+
+
+<!-- anchor for the home button -->
+<div id="home" style="position: absolute; top: 0;"></div>
+
+<!-- banner -->
+<!-- <div id="title">
+    <div id="title-wrapper">
+        <img src="static/img/logo.png" id="title-icon">
+        <p id="title-text">NDD-OMI</p>
+    </div>
+    <p id="subtitle-text">
+        The resource of outcome measurement instruments <br>
+        in neurodegenerative disease research
+        <br><br>
+        (2023)
+    </p>
+    <p id="title-padding-bottom">&nbsp;</p>
+</div> -->
+
+<!-- the main body of the page -->
+<!-- each section uses an empty div as an anchor -->
+<div id="body">
+    <br><br><br><br>
+    <div class="section">
+        <h1>Introduction</h1>
+        <br>
+        <p style="line-height: 150%">
+            Neurodegenerative diseases (NDDs) affect a substantial and growing proportion 
+            of the aging population worldwide. Despite the increasing number of clinical 
+            trials aimed at exploring novel interventions for NDD, there is a substantial 
+            heterogeneity in the selection of appropriate instruments for outcome measurement. 
+            This study aimed to comprehensively investigate the outcome measurement instruments 
+            employed in clinical trials of NDD in past two decades. We collected the entry 
+            terms from Medical Subject Headings database and used as search keywords. An 
+            automatic pipeline was designed to retrieve clinical trials, download registration 
+            files, and extract meta information. The instruments employed in trials were 
+            manually recognized and normalized by domain experts. A total of 4619 trials 
+            posted from January 2001 to December 2022 were included for analysis, and 2494 
+            unique instruments were identified. On average, 4.4 instruments were utilized 
+            per trial, with a minimum of 1 and maximum of 31. Only 15 instruments were shared 
+            across 6 common NDDs. 76.75% of the trials employed more than one instruments, 
+            with many instruments being employed in combinations with others. The top 10 
+            frequently employed instruments for each disease were determined, and their 
+            temporal trends were continued to increase. we also explored the utilization 
+            patterns of sub-modules and different versions of instruments. This study 
+            provides a comprehensive investigation on implementation of instruments 
+            utilized in clinical trials of NDDs, through the utilization patterns discovery 
+            and temporal trends analysis. These findings have revealed employment heterogeneity 
+            of outcome measurement instruments, and provided valuable insights for better 
+            clinical practice of NDDs.
+        </p>
+    </div>
+
+    <div class="section">
+        <div id="data" class="anchor"></div>
+        <h1>Statistics</h1>
+        <p>
+            Initial search yielded 9,515 trials. Following the data filtering process, 
+            instrument annotation, and eligibility assessment, a final data set of 4619 
+            trials were retained for analysis. The submission date of these trials ranged 
+            from January 2001 to December 2022. As shown in Table 1, the AD has the highest 
+            number of trials with 2163 (46.83%),followed by PD (2013, 43.58%), ALS 177 
+            (396, 8.57%), HD (132, 2.86%), LBD (90, 1.95%) and FTLD (69, 1.49%).
+        </p>
+        <p>
+            A total of unique 10679 original instrument entities were annotated, which 
+            were further mapped to 2494 normalized instruments. Table 1 shows the number 
+            of clinical trials, employed instruments, unique instruments, and the average 
+            number of instruments used in each trial. The overall average number of 
+            instruments employed in trials is 4.4003, while the minimum number is 1 and 
+            maximum number is 31. Alzheimer's disease has the highest number of unique 
+            instruments of 1647 with an average of 4.5603 instruments used per trial. 
+            FTLD has the highest average number of instruments per trial at 5.3188.
+        </p>
+        <p style="text-align:center">
+            Table1. Statistic description of clinical trials and outcome measurement instruments
+        </p>
+        <table class="js-sort-table" id="results">
+            <thead>
+            <tr>
+                <td class="js-sort-string"><strong>Neurodegenerative disease</strong></td>
+                <td class="js-sort-number"><strong>Number of trials</strong></td>
+                <td class="js-sort-number"><strong>Number of instruments</strong></td>
+                <td class="js-sort-number"><strong>Number of unique instruments</strong></td>
+                <td class="js-sort-number"><strong>Average number of instruments per trial</strong></td>
+
+                <!-- <td class="js-sort-number"><strong><u>Avg</u></strong></td>
+                <td class="js-sort-number"><strong><u>Avg(Hard)</u></strong></td>
+                <td class="js-sort-number"><strong>STEM</strong></td>
+                <td class="js-sort-number"><strong>Social Science</strong></td>
+                <td class="js-sort-number"><strong>Humanities</strong></td>
+                <td class="js-sort-number"><strong>Others</strong></td> -->
+            </tr>
+            </thead>
+            <!-- 这里使用循环遍历数据并生成表格行 -->
+            <tbody>
+                <tr>
+                    <td>AD</td>
+                    <td>2163</td>
+                    <td>9864</td>
+                    <td>1647</td>
+                    <td>4.5603</td>
+                  </tr>
+                  <tr>
+                    <td>PD</td>
+                    <td>2013</td>
+                    <td>8245</td>
+                    <td>1132</td>
+                    <td>4.0959</td>
+                  </tr>
+            </tbody>
+        </table>
+
+        <p>
+            The AD had the most specific instruments with 1090,194 followed by PD with 649. 
+            Among the numerous instruments, 203 were shared between 195 AD trials and PD 
+            trials, and 15 were shared across 6 NDDs
+        </p>
+    </div>
+
+    <div class="section" id="contact">
+        <h1>Contact Us</h1>
+        <p>Address: Institutes for Systems Genetics, D5-A10, Frontiers Science Center 
+          for Disease-related Molecular Network, No.2222 Xinchuan Road, Chengdu, Sichuan, China</p>
+        <p>E-mail: zonghui0228@163.com</p>
+        <p>Web: http://www.sysbio.org.cn</p>
+
+    </div>
+
+    <!-- Affiliation  -->
+    <div class="section" style="text-align: center;">
+        <div class="container">
+            <div class="profile">
+            <a href="https://www.wchscu.cn/scientific/science_technology/platform/60269.html" target="_blank" rel="external">
+                <img class="center-block" src="static/img/hxlogo.png"
+                     style="height:6em; max-width: 100%;"></a>
+        </div>
+        <!-- <div class="profile">
+            <a href="https://www.tsinghua.edu.cn/" target="_blank" rel="external">
+                <img class="center-block" src="static/img/THU_purple.png"
+                     style="height:6em; max-width: 100%;"></a>
+        </div>
+        <div class="profile">
+            <a href="https://hkust.edu.hk/" target="_blank" rel="external">
+                <img class="center-block" src="static/img/UST.png"
+                     style="height:6em; max-width: 100%;"></a>
+        </div> -->
+        </div>
+    </div>
+</div>
+<!-- footer -->
+<div id="footer" style="font-size: 12pt; text-align: center">
+  All rights reserved: Institutes for Systems Genetics, West China Hospital, Sichuan University
+</div>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="ch">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard | C-Eval: A Multi-Level Multi-Discipline Chinese Evaluation Suite for Foundation Models</title>
+    <link rel="icon" href="static/img/logo.png" type="image/icon type">
+    <link rel="stylesheet" href="static/css/main.css">
+    <!-- <link rel="stylesheet" href="static/css/login.css"> -->
+    <link rel="stylesheet" href="static/css/nav.css">
+    <link rel="stylesheet" href="static/css/model.css">
+    <script type="text/javascript" src="static/javascript/sort-table.js"></script>
+    <script type="text/javascript" src="static/javascript/models_data_en.js" defer></script>
+    <script type="text/javascript" src="static/javascript/model.js" defer></script>
+    <!-- <script src="static/javascript/login.js" defer></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+<!-- 登录框 -->
+<!-- <div id="login-box" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Login</h2>
+        <form id="login-form">
+            <input type="hidden" name="action" value="login">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <input type="submit" value="Login">
+        </form>
+        <p>Don't have an account? <span class="switch-link">Register now</span></p>
+        <p><a id="forgot-link" href="./forgot_password.html">Forgot password?</a></p>
+    </div>
+</div>
+
+注册框
+<div id="register-box" class="modal">
+ 模态框内容 -->
+    <!-- <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Register</h2>
+        <form id="register-form">
+            <input type="hidden" name="action" value="register">
+            <label for="new-username">Username:</label>
+            <input type="text" id="new-username" name="new-username" required>
+            <label for="new-password">Password:</label>
+            <input type="password" id="new-password" name="new-password" required>
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="code">Verification Code:</label>
+            <input type="text" id="code" name="code" required>
+            <button id="send-code-btn" type="button">Send code</button>
+            <input type="submit" value="Register">
+            <p>Already have an account? <span class="switch-link">Login now</span></p>
+        </form>
+    </div> -->
+<!-- </div> -->
+
+<div id="nav">
+    <div id="icon">
+        <img src="img/logo.png" id="nav-icon">
+        <a class="nav-button" href="../index.html#home"
+           style="margin-left: 2px; font-size: 24px">C-Eval
+        </a>
+    </div>
+    <div>
+        <a class="nav-button" href="../index.html#home">Home</a>
+        <!--            <a class="nav-button" href="#dataset">Dataset</a>-->
+        <a class="nav-button" href="../index.html#data">Data</a>
+        <a class="nav-button" href="https://arxiv.org/abs/2305.08322">Paper</a>
+        <a class="nav-button" href="https://github.com/SJTU-LIT/ceval">Github</a>
+        <!--            <a class="nav-button" href="#authors">Authors</a>-->
+        <a class="nav-button" href="leaderboard.html">Leaderboard</a>
+        <a class="nav-button" href="user_interface.html">Submit</a>
+        <a class="nav-button" href="explore.html">Explore</a>
+        <!--        <a class="nav-button" href="visualize.html">Visualize</a>-->
+        <a class="nav-button" href="../index.html#contact">Contact</a>
+        &nbsp; <a class="language" href="#"> EN </a>
+        <a class="language"><span>|</span></a>
+        <a class="language" href="model_zh.html?placeholder"> 中 </a>
+        <span class="btn-container">
+            <span id="loginMsg"></span>
+            <button class="btn btn_login" id="loginBtn">Login</button>
+            <button class="btn btn_register" id="registerBtn">Register</button>
+            <button class="btn btn_logout" id="logoutBtn">Logout</button>
+        </span>
+    </div>
+</div>
+
+<div id="body">
+    <br><br><br><br>
+    <div id="model_title">
+        <h1><span id="model_id"></span></h1>
+    </div>
+    <main>
+        <section id="model_details">
+            <h2>Model Details</h2>
+            <article>
+                <h3>Creator</h3>
+                <p id="creator"></p>
+                <h3>URL</h3>
+                <p id="URL"></p>
+                <h3>Model Description</h3>
+                <p id="model_description"></p>
+                <h3>Prompt Format</h3>
+                <p id="prompt_format"></p>
+            </article>
+        </section>
+        <section>
+            <h2>Detail Results</h2>
+            <p>
+                Here is a detailed breakdown of the results of this model across <strong>52</strong> different subjects,
+                presented in sortable tables and bar graphs. <br>
+                Among them, <strong>STEM</strong> contains <i>20</i> subjects, <strong>social sciences</strong> contains
+                <i>10</i>
+                subjects, <strong>humanities</strong> also contains <i>11</i> subjects, and <strong>other</strong>
+                contains
+                <i>11</i> subjects.
+            </p>
+        </section>
+    </main>
+
+    <p>
+        <strong>Sortable table:</strong>
+    </p>
+    <!-- https://www.cssscript.com/sort-table-header-column/ -->
+    <table class="js-sort-table" id="results">
+        <thead>
+        <tr>
+            <td class="js-sort-number"><strong>Super Category</strong></td>
+            <td class="js-sort-number"><strong>Subject</strong></td>
+            <!-- <td class="js-sort-number"><strong>Learning</strong></td> -->
+            <td class="js-sort-number"><strong>Accuracy</strong></td>
+            <!--            <td class="js-sort-number"><strong>COT Accuracy</strong></td>-->
+        </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+    </table>
+    <p>
+        <strong>Bar graph:</strong>
+        <canvas id="myChart"></canvas>
+    </p>
+</div>
+</div>
+</body>
+
+</html>
